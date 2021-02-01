@@ -6,4 +6,4 @@
 - Install all the required python libraries in the ```requirements.txt``` file.
 
 ### The website that is being scraped:
-![alt text](http://prntscr.com/xybx5h)
+![http://prntscr.com/xybx5h](image)

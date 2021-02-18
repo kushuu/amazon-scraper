@@ -16,17 +16,12 @@ class AmazonSpiderSpider(scrapy.Spider):
         general = response.css('.s-latency-cf-section')
 
         for product in general:
-            product_name = product.css(
-                '.s-latency-cf-section .sg-row span a.a-link-normal span.a-text-normal.a-color-base::text').extract()
-            product_author = product.css(
-                '.sg-col-12-of-20 .sg-col-12-of-20 .a-color-secondary .a-size-base:nth-child(2)').css('::text').extract()
+            product_name = product.css('.s-latency-cf-section .sg-row span a.a-link-normal span.a-text-normal.a-color-base::text').extract()
+            product_author = product.css('.sg-col-12-of-20 .sg-col-12-of-20 .a-color-secondary .a-size-base:nth-child(2)').css('::text').extract()
             product_img_link = product.css('.s-image::attr(src)').extract()
-            product_price = product.css(
-                '.s-latency-cf-section div.a-section.a-spacing-none.a-spacing-top-small span.a-price span.a-price-whole').css('::text').extract()
-            product_stars = product.css(
-                '.aok-align-bottom span::text').extract()
-            product_ratings = product.css(
-                '.a-row a .a-size-base::text').extract()
+            product_price = product.css('.s-latency-cf-section div.a-section.a-spacing-none.a-spacing-top-small span.a-price span.a-price-whole').css('::text').extract()
+            product_stars = product.css('.aok-align-bottom span::text').extract()
+            product_ratings = product.css('.a-row a .a-size-base::text').extract()
 
             items['product_name'] = product_name
             items['product_author'] = product_author
